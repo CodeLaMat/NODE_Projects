@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= header1 %></h1>
+    <ul>
+      <!-- This begins a Javascript snippet.
+      This Javascript must be run on the server side, before the page is sent -->
+      <% usernames.forEach(name => { %>
+      <li><%= name %></li>
+      <% }) %>
+    </ul>
+    <a href="/">Home</a>
+  </body>
+</html>
