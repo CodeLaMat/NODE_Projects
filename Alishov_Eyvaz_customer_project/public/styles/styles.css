@@ -1,0 +1,59 @@
+body {
+  display: flex;
+  margin: 30px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  background-color: rgb(161, 186, 207);
+}
+
+main,
+form {
+  display: grid;
+}
+
+input[readonly] {
+  background-color: rgb(222, 207, 207);
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+table,
+th,
+td {
+  border: solid black 1px;
+  padding: 0.5em;
+}
+
+thead {
+  background-color: rgb(117, 179, 185);
+}
+
+button {
+  font-family: sans-serif;
+  width: 10em;
+  height: 2em;
+}
+
+p.error {
+  border: dashed red 2px;
+  padding: 1em;
+}
+
+p.info {
+  border: solid green 2px;
+  padding: 1em;
+}
+
+h1.error {
+  color: red;
+}
+
+.legend {
+  font-weight: bold;
+  color: blue;
+}
