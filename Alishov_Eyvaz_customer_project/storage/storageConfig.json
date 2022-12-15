@@ -1,5 +1,5 @@
 {
   "storageFile": "Alishov_Eyvaz_customers.json",
   "adapterFile": "customerAdapter.js",
-  "key": "id"
+  "key": "customerId"
 }

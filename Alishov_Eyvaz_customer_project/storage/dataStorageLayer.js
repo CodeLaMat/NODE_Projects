@@ -10,7 +10,6 @@ const {
   removeFromStorage,
 } = require("./storageLayer");
 
-//Datastorage class
 
 module.exports = class Datastorage {
   get CODES() {
@@ -19,32 +18,32 @@ module.exports = class Datastorage {
 
   getAll() {
     return getAllFromStorage();
-  } //end getAll
+  } 
 
-  getOne(id) {
+  getOne(customerId) {
     return new Promise(async (resolve, reject) => {
-      if (!id) {
+      if (!customerId) {
         reject(MESSAGES.NOT_FOUND("---No id number---"));
       } else {
-        const result = await getFromStorage(id);
+        const result = await getFromStorage(customerId);
         if (result) {
           resolve(result);
         } else {
-          reject(MESSAGES.NOT_FOUND(id));
+          reject(MESSAGES.NOT_FOUND(customerId));
         }
       }
     });
-  } //end of getOne
+  }
 
   insert(customer) {
     return new Promise(async (resolve, reject) => {
       if (customer) {
-        if (!customer.id) {
+        if (!customer.customerId) {
           reject(MESSAGES.NOT_INSERTED());
-        } else if (await getFromStorage(customer.id)) {
-          reject(MESSAGES.ALREADY_IN_USE(customer.id));
+        } else if (await getFromStorage(customer.customerId)) {
+          reject(MESSAGES.ALREADY_IN_USE(customer.customerId));
         } else if (await addToStorage(customer)) {
-          resolve(MESSAGES.INSERT_OK(customer.id));
+          resolve(MESSAGES.INSERT_OK(customer.customerId));
         } else {
           reject(MESSAGES.NOT_INSERTED());
         }
@@ -52,13 +51,13 @@ module.exports = class Datastorage {
         reject(MESSAGES.NOT_INSERTED());
       }
     });
-  } //end of insert
+  } 
 
   update(customer) {
     return new Promise(async (resolve, reject) => {
       if (customer) {
         if (await updateStorage(customer)) {
-          resolve(MESSAGES.UPDATE_OK(customer.id));
+          resolve(MESSAGES.UPDATE_OK(customer.customerId));
         } else {
           reject(MESSAGES.NOT_UPDATED());
         }
@@ -66,17 +65,17 @@ module.exports = class Datastorage {
         reject(MESSAGES.NOT_UPDATED());
       }
     });
-  } //end update
+  } 
 
-  remove(id) {
+  remove(customerId) {
     return new Promise(async (resolve, reject) => {
-      if (!id) {
+      if (!customerId) {
         reject(MESSAGES.NOT_FOUND("---No id number---"));
-      } else if (await removeFromStorage(id)) {
-        resolve(MESSAGES.REMOVE_OK(id));
+      } else if (await removeFromStorage(customerId)) {
+        resolve(MESSAGES.REMOVE_OK(customerId));
       } else {
-        reject(MESSAGES.NOT_REMOVED(id));
+        reject(MESSAGES.NOT_REMOVED(customerId));
       }
     });
-  } //end of remove
+  } 
 };

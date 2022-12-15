@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-    <link rel="stylesheet" href="styles/basicStyles.css">
+    <link rel="stylesheet" href="/styles/styles.css" />
   </head>
 
   <body>
@@ -16,14 +16,14 @@
       <form action="<%= action %>" method="POST">
         <div>
           <p>
-            <label for="id">Customer id:</label>
+            <label for="customerId">Customer id:</label>
             <input
               type="text"
-              id="id"
-              name="id"
+              id="customerId"
+              name="customerId"
               size="5"
-              value="<%= id.value %>"
-              <%= id.readonly %>
+              value="<%= customerId.value %>"
+              <%= customerId.readonly %>
             />
           </p>
           <p>
@@ -60,20 +60,20 @@
             />
           </p>
           <p>
-            <label for="class">Cless:</label>
+            <label for="customerclass">Customer class:</label>
             <input
               type="text"
-              id="class"
-              name="class"
+              id="customerclass"
+              name="customerclass"
               size="10"
-              value="<%= class.value %>"
-              <%= class.readonly %>
+              value="<%= customerclass.value %>"
+              <%= customerclass.readonly %>
             />
           </p>
         </div>
         <button type="submit">Submit</button>
       </form>
-      <a href="/"><button>Go to menu</button></a>
+      <a href="/"><button>Main Page</button></a>
     </main>
   </body>
 </html>

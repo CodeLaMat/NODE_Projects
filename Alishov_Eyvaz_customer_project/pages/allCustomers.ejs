@@ -23,16 +23,16 @@
         <tbody>
           <% result.forEach(customer => { %>
           <tr>
-            <td><%= customer.id %></td>
+            <td><%= customer.customerId %></td>
             <td><%= customer.firstname %></td>
             <td><%= customer.lastname %></td>
             <td><%= customer.address %></td>
-            <td><%= customer.class %></td>
+            <td><%= customer.customerclass %></td>
           </tr>
           <% }) %>
         </tbody>
       </table>
-      <a href="/"><button>Menu</button></a>
+      <a href="/"><button>Main Page</button></a>
     </main>
   </body>
 </html>

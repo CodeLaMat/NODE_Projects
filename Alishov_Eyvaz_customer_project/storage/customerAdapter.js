@@ -3,11 +3,11 @@
 function adapt(customer) {
   console.log('adapter')
   return Object.assign(customer, {
-    id: +customer.id,
+    customerId: +customer.customerId,
     firstname: customer.firstname,
     lastname: customer.lastname,
     address: customer.address,
-    class: customer.class,
+    customerclass: customer.customerclass,
   });
 }
 

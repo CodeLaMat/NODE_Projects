@@ -33,8 +33,8 @@ app.get("/all", (req, res) =>
 
 app.get("/getCustomer", (req, res) =>
   res.render("getCustomer", {
-    title: "Get",
-    header: "Get",
+    title: "Find customer",
+    header: "Find a customer",
     action: "/getCustomer",
   })
 );
@@ -54,11 +54,11 @@ app.get("/inputform", (req, res) =>
     title: "Add customer",
     header: "Add a new customer",
     action: "/input",
-    id: { value: "", readonly: "" },
+    customerId: { value: "", readonly: "" },
     firstname: { value: "", readonly: "" },
     lastname: { value: "", readonly: "" },
     address: { value: "", readonly: "" },
-    class: { value: "", readonly: "" },
+    customerclass: { value: "", readonly: "" },
   })
 );
 
@@ -76,11 +76,11 @@ app.get("/updateform", (req, res) =>
     title: "Update customer",
     header: "Update customer data",
     action: "/updatedata",
-    id: { value: "", readonly: "" },
+    customerId: { value: "", readonly: "" },
     firstname: { value: "", readonly: "readonly" },
     lastname: { value: "", readonly: "readonly" },
     address: { value: "", readonly: "readonly" },
-    class: { value: "", readonly: "readonly" },
+    customerclass: { value: "", readonly: "readonly" },
   })
 );
 
@@ -94,11 +94,11 @@ app.post("/updatedata", (req, res) => {
         title: "Update customer",
         header: "Update customer data",
         action: "/update",
-        id: { value: customer.id, readonly: "readonly" },
+        customerId: { value: customer.customerId, readonly: "readonly" },
         firstname: { value: customer.firstname, readonly: "" },
         lastname: { value: customer.lastname, readonly: "" },
         address: { value: customer.address, readonly: "" },
-        class: { value: customer.class, readonly: "" },
+        customerclass: { value: customer.class, readonly: "" },
       })
     )
     .catch((error) => sendErrorPage(res, error));
@@ -115,8 +115,8 @@ app.post("/update", (req, res) => {
 
 app.get("/removeCustomer", (req, res) =>
   res.render("getCustomer", {
-    title: "Remove",
-    header: "removeCustomer",
+    title: "Remove customer",
+    header: "Remove a customer from database",
     action: "/removeCustomer",
   })
 );

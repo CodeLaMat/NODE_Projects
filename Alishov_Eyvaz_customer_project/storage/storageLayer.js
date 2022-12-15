@@ -16,10 +16,10 @@ async function getAllFromStorage() {
   return readStorage(storageFilePath);
 }
 
-async function getFromStorage(id) {
+async function getFromStorage(customerId) {
   return (
     (await readStorage(storageFilePath)).find(
-      (customer) => customer[key] == id
+      (customer) => customer[key] == customerId
     ) || null
   );
 }
@@ -42,9 +42,9 @@ async function updateStorage(modifiedObject) {
   return false;
 }
 
-async function removeFromStorage(id) {
+async function removeFromStorage(customerId) {
   const storageData = await readStorage(storageFilePath);
-  const i = storageData.findIndex((customer) => customer[key] == id);
+  const i = storageData.findIndex((customer) => customer[key] == customerId);
   if (i < 0) return false;
   storageData.splice(i, 1);
   return await writeStorage(storageFilePath, storageData);
