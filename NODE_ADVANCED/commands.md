@@ -9,3 +9,11 @@ create firstTest.js file and make connection with mariaDb
 rest server needs
 
 express and cors libraries (npm install express cors)
+
+** starting and stopping mariadb server**
+sudo service mariadb start
+sudo service mariadb stop
+
+starting mysql: mysql -u admin -p
+
+node createDatabase.js Diplom@t111 computerCreateStatements.json
