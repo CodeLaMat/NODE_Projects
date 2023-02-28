@@ -16,4 +16,8 @@ sudo service mariadb stop
 
 starting mysql: mysql -u admin -p
 
+SELECT user,host FROM mysql.user;
+
+show databases ;
+
 node createDatabase.js Diplom@t111 computerCreateStatements.json
